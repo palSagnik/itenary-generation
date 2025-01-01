@@ -1,0 +1,13 @@
+scalar Date
+
+type Flight {
+    airline: String!
+    src: String!
+    dest: String!
+    date: Date!
+    seats: Int!
+    departureTime: String!
+    arrivalTime: String!
+    price: Float!
+    currency: String!
+}

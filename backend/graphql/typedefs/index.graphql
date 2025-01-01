@@ -1,0 +1,23 @@
+scalar Date
+
+type Query {
+
+    # itenary
+    makeItenary(
+        src: String!
+        dest: String!
+        startDate: Date!
+        endDate: Date!
+        people: Int!
+        maxBudget: Float!
+    ): Itenary!
+    
+    # flights
+    searchFlights(
+        src: String!
+        dest: String!
+        date: Date!
+        passengers: Int!
+    ): [Flight!]
+}
+

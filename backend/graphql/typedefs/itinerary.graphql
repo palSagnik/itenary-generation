@@ -1,0 +1,5 @@
+type Itinerary {
+    id: ID!
+    username: String!
+    flightDetails: Flight!
+}

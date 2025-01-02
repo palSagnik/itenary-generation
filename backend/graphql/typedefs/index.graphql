@@ -1,19 +1,16 @@
 scalar Date
 
 type Query {
-
-    # itenary
-    makeItenary(
+    makeItinerary (
         src: String!
         dest: String!
         startDate: Date!
         endDate: Date!
         people: Int!
         maxBudget: Float!
-    ): Itenary!
+    ): Itinerary!
     
-    # flights
-    searchFlights(
+    searchFlights (
         src: String!
         dest: String!
         date: Date!

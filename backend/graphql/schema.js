@@ -1,20 +1,25 @@
-import { join } from "path"
+import { join, dirname } from 'path'
+import { fileURLToPath } from 'url'
 import { readdirSync, readFileSync } from 'fs'
 import { makeExecutableSchema } from '@graphql-tools/schema'
+import resolvers from './resolvers/index.js'
 
-const graphqlFiles = readdirSync(__dirname, './typedefs')
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+const graphqlFiles = readdirSync(join(__dirname, './typedefs'))
 
 let typeDefs = ''
 
 graphqlFiles.forEach((file) => {
-    typeDefs += readFileSync(join(__dirname, './typedefs', file), {
-        encoding: 'utf-8',
-    })
+  typeDefs += readFileSync(join(__dirname, './typedefs', file), {
+    encoding: 'utf8',
+  })
 })
 
-const schema = makeExecutableSchema(
-    typeDefs, 
-    // Pending schema
-)
+const schema = makeExecutableSchema({
+  typeDefs,
+  resolvers
+})
 
 export default schema

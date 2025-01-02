@@ -1,8 +1,0 @@
-scalar Date
-
-type Itenary {
-    id: ID!
-    username: String!
-    flightDetails: Flight!
-    accomodationDetails: Accomodation!
-}

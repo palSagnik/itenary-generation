@@ -1,6 +1,6 @@
 
 // helper function to tranform amadeusAPIresponse to graphql format
-const transformApiResponse = (amadeusOffer) => {
+const transformAmadeusApiResponse = (amadeusOffer) => {
 
     return amadeusOffer.map(offer => {
         const itinerary = offer.itineraries[0]
@@ -13,10 +13,14 @@ const transformApiResponse = (amadeusOffer) => {
             dest: segment.arrival.iatacode,
             departureTime: segment.departure.at,
             arrivalTime: segment.arrival.at,
-            price: parseFloat(offer.price.total)
+            price: parseFloat(offer.price.total),
+            currency: offer.price.currency,
+            availableSeats: offer.numberOfBookableSeats
         }
     })
 }
+
+export default transformAmadeusApiResponse
 
 // example response of amadeus api for flights
 /*

@@ -14,4 +14,6 @@ const env = {
 const amadeusApiKey = process.env.AMADEUS_API_KEY
 const amadeusApiKeySecret = process.env.AMADEUS_API_KEY_SECRET
 
-export {port, env, amadeusApiKey, amadeusApiKeySecret}
+const maxResults = process.env.MAX_RESULTS
+
+export {port, env, amadeusApiKey, amadeusApiKeySecret, maxResults}

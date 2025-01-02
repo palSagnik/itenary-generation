@@ -1,11 +1,11 @@
 type Flight {
+    id: ID!
     airline: String!
     src: String!
     dest: String!
-    date: Date!
-    seats: Int!
     departureTime: String!
     arrivalTime: String!
     price: Float!
     currency: String!
+    availableSeats: Int!
 }

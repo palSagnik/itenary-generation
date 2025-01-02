@@ -13,7 +13,7 @@ type Query {
     searchFlights (
         src: String!
         dest: String!
-        date: Date!
+        date: String!
         passengers: Int!
     ): [Flight!]
 }

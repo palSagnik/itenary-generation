@@ -2,6 +2,7 @@ import express, { request, response } from "express"
 import graphqlServer from "./graphql/index.js"
 import { expressMiddleware } from '@apollo/server/express4'
 import cors from "cors"
+import bodyParser from "body-parser"
 
 const app = express()
 
@@ -11,6 +12,7 @@ await graphqlServer.start()
 app.use(
     '/graphql',
     cors(),
+    bodyParser.json(),
     expressMiddleware(graphqlServer, {
         context: async ({request, response}) => ({
             request: request,

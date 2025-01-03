@@ -37,15 +37,27 @@ const transformAmadeusFlightApiResponse = (amadeusOffer) => {
 
     return amadeusOffer.map(offer => {
         const itinerary = offer.itineraries[0]
-        const segment = itinerary.segments[0]
+        const segments = itinerary.segments
+
+        const stops = segments.length > 1 ? segments.slice(0, -1).map(segment => segment.arrival.iataCode) : []
+        
+        const flightSegments = segments.map(segment => ({
+          from: segment.departure.iataCode,
+          to: segment.arrival.iataCode,
+          departureTime: segment.departure.at,
+          arrivalTime: segment.arrival.at,
+          airline: segment.carrierCode
+      }))
 
         return {
             id: offer.id,
-            airline: segment.carrierCode,
-            src: segment.departure.iatacode,
-            dest: segment.arrival.iatacode,
-            departureTime: segment.departure.at,
-            arrivalTime: segment.arrival.at,
+            segments: flightSegments,
+            totalDuration: itinerary.duration,
+            origin: segments[0].departure.iatacode,
+            dest: segments[segments.length - 1].arrival.iatacode,
+            departureTime: segments[0].departure.at,
+            arrivalTime: segments[segments.length - 1].arrival.at,
+            stops: stops,
             price: parseFloat(offer.price.total),
             currency: offer.price.currency,
             availableSeats: offer.numberOfBookableSeats

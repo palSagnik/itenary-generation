@@ -1,10 +1,10 @@
 type Flight {
     id: ID!
-    airline: String!
-    src: String!
-    dest: String!
+    segments: [FlightSegment!]!
+    totalDuration: String!
     departureTime: String!
     arrivalTime: String!
+    stops: [String!]!
     price: Float!
     currency: String!
     availableSeats: Int!

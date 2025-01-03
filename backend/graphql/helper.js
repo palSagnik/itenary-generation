@@ -1,6 +1,39 @@
+// helper fucntion to transform amadeusHotelResponse API to graphql format
+const transformAmadeusHotelSearchApiResponse = (amadeusOffer) => {
 
-// helper function to tranform amadeusAPIresponse to graphql format
-const transformAmadeusApiResponse = (amadeusOffer) => {
+    return amadeusOffer.map(search => {
+
+      const searchList = search.offers[0]
+
+      return {
+        offerid: searchList.id,
+        checkinDate: searchList.checkInDate,
+        checkOutDate: searchList.checkOutDate,
+        
+        price: parseFloat(offer.price.total),
+        currency: offer.price.currency,
+      }
+    })
+}
+
+// helper function to list hotels response to graphql format
+const transformAmadeusHotelListApiResponse = (amadeusOffer) => {
+
+  return amadeusOffer.map(offer => {
+
+    return {
+      name: offer.name,
+      hotelID: offer.hotelId,
+      geoCode: {
+        latitude: parseFloat(offer.geoCode.latitude),
+        longitude: parseFloat(offer.geoCode.longitude)
+      }
+    }
+  })
+}
+
+// helper function to tranform amadeusflightAPIresponse to graphql format
+const transformAmadeusFlightApiResponse = (amadeusOffer) => {
 
     return amadeusOffer.map(offer => {
         const itinerary = offer.itineraries[0]
@@ -20,7 +53,7 @@ const transformAmadeusApiResponse = (amadeusOffer) => {
     })
 }
 
-export default transformAmadeusApiResponse
+export  {transformAmadeusFlightApiResponse, transformAmadeusHotelListApiResponse}
 
 // example response of amadeus api for flights
 /*

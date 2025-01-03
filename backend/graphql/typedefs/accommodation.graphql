@@ -1,0 +1,5 @@
+type Hotel {
+    hotelID: String!
+    name: String!
+    geoCode: GeoCode!
+}

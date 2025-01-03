@@ -1,5 +1,5 @@
 import { maxResults } from "../../../config/environment/index.js"
-import transformAmadeusApiResponse from "../../helper.js"
+import {transformAmadeusFlightApiResponse} from "../../helper.js"
 import { amadeusApiKey, amadeusApiKeySecret } from "../../../config/environment/index.js"
 import amadeus from "amadeus"
 
@@ -19,7 +19,7 @@ const travelQueries = {
                 max: maxResults
             })
 
-            const flights = transformAmadeusApiResponse(resp.data)
+            const flights = transformAmadeusFlightApiResponse(resp.data)
             return flights.sort((a, b) => a.price - b.price)
         } catch (error) {
             console.error('amadeus api error: ', error)

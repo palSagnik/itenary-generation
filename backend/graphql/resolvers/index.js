@@ -1,8 +1,10 @@
 import { travelQueries } from "./flights/index.js"
+import {accommodationQueries} from "./accommodation/index.js"
 
 const resolvers = {
     Query: {
-        ...travelQueries
+        ...travelQueries,
+        ...accommodationQueries
     }
 }
 

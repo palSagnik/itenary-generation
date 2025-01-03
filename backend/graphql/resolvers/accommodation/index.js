@@ -1,0 +1,1 @@
+export {default as accommodationQueries} from "./query.js"

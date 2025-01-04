@@ -10,7 +10,7 @@ type Query {
         maxBudget: Float!
     ): Itinerary!
     
-    searchFlights (
+    listFlights (
         src: String!
         dest: String!
         date: String!
@@ -20,5 +20,10 @@ type Query {
     listHotels (
         location: String!
     ): [Hotel]!
+
+    listActivities(
+        latitude: Float!
+        longitude: Float!
+    ): [Activity]!
 }
 

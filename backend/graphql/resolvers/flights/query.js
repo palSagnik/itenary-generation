@@ -9,7 +9,7 @@ const amadeusClient = new amadeus({
 })
 
 const travelQueries = {
-    searchFlights: async (_, {src, dest, date, passengers}) => {
+    listFlights: async (_, {src, dest, date, passengers}) => {
         try {
             const resp = await amadeusClient.shopping.flightOffersSearch.get({
                 originLocationCode: src, 

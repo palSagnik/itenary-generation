@@ -14,6 +14,7 @@ const env = {
 const amadeusApiKey = process.env.AMADEUS_API_KEY
 const amadeusApiKeySecret = process.env.AMADEUS_API_KEY_SECRET
 
-const maxResults = process.env.MAX_RESULTS
+const maxResults = process.env.DEFAULT_MAX_RESULTS
 
-export {port, env, amadeusApiKey, amadeusApiKeySecret, maxResults}
+const searchRadius = process.env.DEFAULT_SEARCH_CIRCLE_RADIUS_KMS
+export {port, env, amadeusApiKey, amadeusApiKeySecret, maxResults, searchRadius}

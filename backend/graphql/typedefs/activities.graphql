@@ -1,0 +1,10 @@
+type Activity {
+    activityID: ID!
+    name: String!
+    desc: String!
+    geoCode: GeoCode!
+    rating: Float!
+    bookingLink: String!
+    currency: String!
+    price: String!
+}

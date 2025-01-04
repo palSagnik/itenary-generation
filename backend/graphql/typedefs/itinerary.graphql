@@ -2,4 +2,6 @@ type Itinerary {
     id: ID!
     username: String!
     flightDetails: Flight!
+    hotelDetails: Hotel!
+    activityDetails: Activity!
 }

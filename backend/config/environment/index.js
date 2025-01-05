@@ -12,9 +12,10 @@ const env = {
 }
 
 const amadeusApiKey = process.env.AMADEUS_API_KEY
+const weatherApiKey = process.env.WEATHER_API_KEY
 const amadeusApiKeySecret = process.env.AMADEUS_API_KEY_SECRET
 
 const maxResults = process.env.DEFAULT_MAX_RESULTS
 
 const searchRadius = process.env.DEFAULT_SEARCH_CIRCLE_RADIUS_KMS
-export {port, env, amadeusApiKey, amadeusApiKeySecret, maxResults, searchRadius}
+export {port, env, amadeusApiKey, weatherApiKey, amadeusApiKeySecret, maxResults, searchRadius}

@@ -1,3 +1,22 @@
+//weather
+// helper fucntion to transform weatherActivityResponse API to graphql format
+const transformWeatherForecastApiResponse = (weatherResult) => {
+  return {
+    location: weatherResult.location.name,
+    region: weatherResult.location.region || '',
+    date: weatherResult.forecast.forecastday[0].date,
+    temp: {
+      maxValue: weatherResult.forecast.forecastday[0].day.maxtemp_c,
+      minValue: weatherResult.forecast.forecastday[0].day.mintemp_c,
+      unit: "Celsius"
+    },
+    humidity: weatherResult.forecast.forecastday[0].day.avghumidity,
+    sunrise: weatherResult.forecast.forecastday[0].astro.sunrise || '',
+    sunset: weatherResult.forecast.forecastday[0].astro.sunset || ''
+  }
+}
+
+
 // activities
 // helper fucntion to transform amadeusActivityResponse API to graphql format
 const transformAmadeusActivityListApiResponse = (amadeusOffer) => {
@@ -16,6 +35,19 @@ const transformAmadeusActivityListApiResponse = (amadeusOffer) => {
         currency: offer.price.currency || ""
       }
   })
+}
+
+// Helper to generate dates between start and end date
+const generateDateRange = (startDate, endDate) => {
+  const dates = []
+  const currentDate = new Date(startDate)
+  const lastDate = new Date(endDate)
+
+  while (currentDate <= lastDate) {
+      dates.push(new Date(currentDate))
+      currentDate.setDate(currentDate.getDate() + 1)
+  }
+  return dates
 }
 
 
@@ -89,5 +121,7 @@ const transformAmadeusFlightApiResponse = (amadeusOffer) => {
 export { transformAmadeusFlightApiResponse, 
   transformAmadeusHotelListApiResponse, 
   transformAmadeusHotelSearchApiResponse,
-  transformAmadeusActivityListApiResponse 
+  transformAmadeusActivityListApiResponse,
+  transformWeatherForecastApiResponse, 
+  generateDateRange,
 }

@@ -1,0 +1,9 @@
+type Weather {
+    location: String!
+    region: String!
+    date: Date!
+    temp: Temp!
+    humidity: Float!
+    sunrise: String!
+    sunset: String!
+}

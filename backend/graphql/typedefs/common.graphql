@@ -10,3 +10,9 @@ type FlightSegment {
     arrivalTime: String!
     airline: String!
 }
+
+type Temp {
+    maxValue: Float!
+    minValue: Float!
+    unit: String!
+}

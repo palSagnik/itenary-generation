@@ -25,5 +25,11 @@ type Query {
         latitude: Float!
         longitude: Float!
     ): [Activity]!
+
+    predictWeather(
+        startDate: Date!
+        endDate: Date!
+        location: String!
+    ): [Weather]!
 }
 

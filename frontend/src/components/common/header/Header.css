@@ -1,0 +1,44 @@
+/* Add to your CSS file */
+.header-section {
+  padding: 1rem 0;
+}
+
+.navbar-brand .nav-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.nav-link {
+  color: #333;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.dropdown-item.active, 
+.dropdown-item:active {
+  background-color: #007bff;
+}
+
+.btn-primary {
+  padding: 0.5rem 1.5rem;
+}
+
+/* Mobile menu icon */
+.navbar-toggler {
+  border: none;
+  padding: 0;
+}
+
+.navbar-toggler i {
+  font-size: 1.5rem;
+}
+
+/* Logo in mobile menu */
+.offcanvas .logo {
+  font-size: 1.5rem;
+  margin: 0;
+}

@@ -5,21 +5,20 @@
 
 
 :root {
-  --primaryClr: #fe4e37;
-  --secondaryClr: #fffaf9;
-  --bgClr: #f8f9fd;
-  --white: #ffffff;
-  --black: black;
-  --textclr: #4f5e71;
-
-  --smallText: 12px;
-
-  --bodyText: 16px;
-  --subTitle: 18px;
-  --heading: 26px;
-  --fontFamily: "Lato", sans-serif;
-  --fontFamily1: "Libre Baskerville", serif;
-  
+	--primaryClr: #2D7D90;
+	--secondaryClr: #F7FBFC;
+	--bgClr: #F9FAFB;
+	--white: #ffffff;
+	--black: #1A1A1A;
+	--textclr: #475569;
+   
+	--smallText: 12px;
+	--bodyText: 16px;
+	--subTitle: 18px;
+	--heading: 26px;
+	
+	--fontFamily: "Lato", sans-serif;
+	--fontFamily1: "Libre Baskerville", serif;
 }
 
 /*

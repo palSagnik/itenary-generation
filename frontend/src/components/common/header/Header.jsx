@@ -3,7 +3,7 @@ import { Container, Row, Navbar, Nav, Offcanvas, NavDropdown } from 'react-boots
 import { NavLink } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import "../header/Header.css"
+import "./Header.css"
 
 const Header = () => {
   const [open, setOpen] = useState(false)
@@ -31,7 +31,7 @@ const Header = () => {
     <section className='header-section'>
       <Container>
         <Row>
-          <Navbar expand="lg" className="bg-body-tertiary mb-3"> {/* Fixed typo in expand */}
+          <Navbar expand="lg"> {/* Fixed typo in expand */}
             <Navbar.Brand>
               <NavLink to='/' className="text-decoration-none"> Wanderlust </NavLink>
             </Navbar.Brand>
@@ -64,7 +64,7 @@ const Header = () => {
                   >
                     <NavDropdown.Item as={NavLink} to="/flights">Flights</NavDropdown.Item>
                     <NavDropdown.Item as={NavLink} to="/hotels">Hotels</NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to="/poi">Points Of Interest</NavDropdown.Item>
+                    <NavDropdown.Item as={NavLink} to="/points_of_interest">Points Of Interest</NavDropdown.Item>
                     <NavDropdown.Item as={NavLink} to="/weather">Weather Forecast</NavDropdown.Item>
                   </NavDropdown>
                 </Nav>

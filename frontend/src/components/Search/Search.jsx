@@ -16,7 +16,7 @@ const Search = () => {
                 <Container>
                     <Row>
                         <Col md={12} xs={12}>
-                            <div className='box-search'>
+                            <div className='box-search shadow-sm'>
                                 <div className='item-search'>
                                     <CustomDropdown
                                         label='location'
@@ -35,9 +35,10 @@ const Search = () => {
                                     <DatePicker
                                         selected={startDate}
                                         onChange={(date) => setStartDate(date)}
-                                        selectedStart
+                                        selectsStart
                                         startDate={startDate}
                                         endDate={endDate}
+
                                         dateFormat="dd-MMMM-yyyy"
                                     />
                                 </div>
@@ -46,9 +47,10 @@ const Search = () => {
                                     <DatePicker
                                         selected={endDate}
                                         onChange={(date) => setEndDate(date)}
-                                        selectedStart
+                                        selectsEnd
                                         startDate={endDate}
                                         endDate={startDate}
+
                                         dateFormat="dd-MMMM-yyyy"
                                     />
                                 </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Dropdown, Form } from "react-bootstrap";
-import "./customdropdown.css";
+import "./CustomDropdown.css";
 
 const CustomDropdown = ({ label, options, onSelect }) => {
   const [value, setValue] = useState("");

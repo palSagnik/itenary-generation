@@ -4,6 +4,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import DatePicker from 'react-datepicker'
 import { useState } from 'react'
 import CustomDropdown from '../CustomDropdown/CustomDropdown'
+import "react-datepicker/dist/react-datepicker.css"
 
 const Search = () => {
 

@@ -1,5 +1,5 @@
 import {travelQueries} from "./flights/index.js"
-import {accommodationQueries} from "./accommodation/index.js"
+import {accommodationQueries, accommodationMutations} from "./accommodation/index.js"
 import {activityQueries} from "./activities/index.js"
 import {weatherQueries} from "./weather/index.js"
 
@@ -9,6 +9,9 @@ const resolvers = {
         ...accommodationQueries,
         ...activityQueries,
         ...weatherQueries
+    },
+    Mutation: {
+        ...accommodationMutations
     }
 }
 

@@ -20,7 +20,7 @@ const Search = () => {
                             <div className='box-search shadow-sm'>
                                 <div className='item-search'>
                                     <CustomDropdown
-                                        label='location'
+                                        label='Location'
                                         options={
                                             [
                                                 "Toronto, Canada",

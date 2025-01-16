@@ -3,7 +3,20 @@ type GeoCode {
     longitude: Float!
 }
 
+input GeoCodeInput {
+    latitude: Float!
+    longitude: Float!
+}
+
 type FlightSegment {
+    from: String!
+    to: String!
+    departureTime: String!
+    arrivalTime: String!
+    airline: String!
+}
+
+input FlightSegmentInput {
     from: String!
     to: String!
     departureTime: String!

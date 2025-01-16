@@ -9,3 +9,15 @@ type Flight {
     currency: String!
     availableSeats: Int!
 }
+
+input FlightInput {
+    id: ID!
+    segments: [FlightSegmentInput!]!
+    totalDuration: String!
+    departureTime: String!
+    arrivalTime: String!
+    stops: [String!]!
+    price: Float!
+    currency: String!
+    availableSeats: Int!
+}

@@ -3,3 +3,9 @@ type Hotel {
     name: String!
     geoCode: GeoCode!
 }
+
+input HotelInput {
+    hotelID: String!
+    name: String!
+    geoCode: GeoCodeInput!
+}

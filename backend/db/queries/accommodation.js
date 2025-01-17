@@ -15,30 +15,43 @@ export const addHotel = async (hotelData) => {
         name = EXCLUDED.name,
         latitude = EXCLUDED.latitude,
         longitude = EXCLUDED.longitude
-      RETURNING *;
-    `;
+      RETURNING 
+        hotel_id as "hotelID",
+        name,
+        latitude,
+        longitude;
+    `
 
     const values = [
       hotelData.hotelID,
       hotelData.name,
       hotelData.geoCode.latitude,
       hotelData.geoCode.longitude
-    ];
+    ]
 
-    const result = await client.query(query, values);
+    const result = await client.query(query, values)
     
     if (!result.rows[0]) {
-      throw new Error('Failed to insert hotel data');
+      throw new Error('Failed to insert hotel data')
     }
 
-    await client.query('COMMIT');
-    return result.rows[0];
+    const savedHotel = {
+      hotelID: result.rows[0].hotelID,
+      name: result.rows[0].name,
+      geoCode: {
+        latitude: result.rows[0].latitude,
+        longitude: result.rows[0].longitude
+      }
+    }
+
+    await client.query('COMMIT')
+    return savedHotel
 
   } catch (error) {
-    await client.query('ROLLBACK');
-    console.error('Error saving hotel:', error);
-    throw new Error('Failed to save hotel');
+    await client.query('ROLLBACK')
+    console.error('Error saving hotel:', error)
+    throw new Error('Failed to save hotel')
   } finally {
-    client.release();
+    client.release()
   }
-};
+}

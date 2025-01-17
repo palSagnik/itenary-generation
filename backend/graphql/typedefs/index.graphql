@@ -36,9 +36,9 @@ type Query {
 type Mutation {
     addFlight(
         flight: FlightInput!
-    ): Flight!
+    ): Flight
 
     addHotel(
         hotel: HotelInput!
-    ): Hotel!
+    ): Hotel
 }

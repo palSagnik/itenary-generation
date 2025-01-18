@@ -1,4 +1,4 @@
-import pool from '../index.js'
+import {pool} from '../index.js'
 
 export const addFlight = async (flightData) => {
   const client = await pool.connect();

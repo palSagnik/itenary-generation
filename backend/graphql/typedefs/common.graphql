@@ -13,7 +13,6 @@ type FlightSegment {
     to: String!
     departureTime: String!
     arrivalTime: String!
-    airline: String!
 }
 
 input FlightSegmentInput {
@@ -21,7 +20,6 @@ input FlightSegmentInput {
     to: String!
     departureTime: String!
     arrivalTime: String!
-    airline: String!
 }
 
 type Temp {

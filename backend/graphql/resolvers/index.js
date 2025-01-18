@@ -11,7 +11,8 @@ const resolvers = {
         ...weatherQueries
     },
     Mutation: {
-        ...accommodationMutations
+        ...accommodationMutations,
+        ...flightMutations
     }
 }
 
